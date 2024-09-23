@@ -1,4 +1,5 @@
-import ChainList
+from ChainList import ChainList
+
 
 class ListGroup:
     def __init__(self, element, euristic):
@@ -7,20 +8,21 @@ class ListGroup:
         self.ChainList: ChainList = None
         self.euristic = euristic
 
-    def makeset(self) -> ChainList:
-        self.ChainList = ChainList(self,self,self.euristic)
+    def makeset(self, listgroup) -> ChainList:
+        self.ChainList = ChainList(listgroup, self.euristic)
         return self.ChainList
 
     def findset(self):
         return self.ChainList.head
+
     def getElement(self):
         return self.element
-    def setList(self, ChainList):
-        self.ChainList = ChainList
+
+    def setList(self, chainList):
+        self.ChainList = chainList
+
     def getGroup(self):
         return self
-    def __call__(self):
-        self.makeset()
 
 
 

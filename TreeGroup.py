@@ -1,4 +1,4 @@
-import TreeList
+from TreeList import TreeList
 
 class TreeGroup:
     def __init__(self, element):
@@ -7,9 +7,9 @@ class TreeGroup:
         self.TreeList = None
 
 
-    def makeset(self):
-        self.TreeList = self
-        return TreeList(self)
+    def makeset(self, treeGroup) -> TreeList:
+        self.TreeList = TreeList(treeGroup)
+        return self.TreeList
     def findset(self):
         return self.TreeList.root
     def getElement(self):
