@@ -11,7 +11,7 @@ class ChainList:
             ChainList.setSize(ChainList.getSize() + self.size)
             i = self.head
             while i is not None:
-                i.setList(ChainList)
+                i.setChainList(ChainList)
                 i = i.next
             self.head = ChainList.getTail().next
             ChainList.setTail(self.tail)
@@ -20,7 +20,7 @@ class ChainList:
             self.size += ChainList.getSize()
             i = ChainList.getHead()
             while i is not None:
-                i.setList(self)
+                i.setChainList(self)
                 i = i.next
             self.tail.next = ChainList.getHead()
             self.tail = ChainList.getTail()
