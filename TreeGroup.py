@@ -16,5 +16,3 @@ class TreeGroup:
         return self.element
     def getGroup(self):
         return self
-    def setList(self, TreeGroup):
-        self.TreeList = TreeGroup

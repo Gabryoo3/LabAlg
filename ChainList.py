@@ -5,23 +5,27 @@ class ChainList:
         self.head = ListGroup
         self.tail = ListGroup
         self.size = 1
+        self.euristic = euristic
     def union(self, ChainList):
         if self.size < ChainList.getSize() & self.euristic == True:
             ChainList.setSize(ChainList.getSize() + self.size)
+            i = self.head
+            while i is not None:
+                i.setList(ChainList)
+                i = i.next
             self.head = ChainList.getTail().next
             ChainList.setTail(self.tail)
-            while self.tail != None:
-                self.tail.getGroup().setList(ChainList)
-                self.tail = self.tail.next
             return ChainList
         else:
             self.size += ChainList.getSize()
+            i = ChainList.getHead()
+            while i is not None:
+                i.setList(self)
+                i = i.next
             self.tail.next = ChainList.getHead()
             self.tail = ChainList.getTail()
-            while ChainList.getTail() != None:
-                ChainList.getTail().getGroup().setList(self)
-                ChainList.setTail(ChainList.getTail().next)
             return self
+
     def getHead(self):
         return self.head
     def getTail(self) -> ListGroup:
