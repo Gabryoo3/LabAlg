@@ -10,6 +10,7 @@ class ListGroup:
 
     def makeset(self) -> ChainList:
         self.chainList = ChainList(self, self.euristic)
+        print("ChainList: ", self.chainList)
         return self.chainList
 
     def findset(self):

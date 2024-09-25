@@ -7,7 +7,8 @@ class ChainList:
         self.size = 1
         self.euristic = euristic
     def union(self, ChainList):
-        if self.size < ChainList.getSize() & self.euristic == True:
+        if (self.size < ChainList.getSize()) and (self.euristic == True): #caso con euristica
+            print("Euristica")
             ChainList.setSize(ChainList.getSize() + self.size)
             i = self.head
             while i is not None:
@@ -16,7 +17,9 @@ class ChainList:
             self.head = ChainList.getTail().next
             ChainList.setTail(self.tail)
             return ChainList
+        #caso senza euristica
         else:
+            print("No Euristica")
             self.size += ChainList.getSize()
             i = ChainList.getHead()
             while i is not None:
@@ -38,6 +41,11 @@ class ChainList:
         self.tail = ChainList.getTail()
     def setSize(self, ChainList):
         self.size = ChainList.getSize()
+    def print(self):
+        i = self.head
+        while i is not None:
+            print(i.getElement())
+            i = i.next
 
 
 

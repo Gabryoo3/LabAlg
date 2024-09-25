@@ -1,3 +1,5 @@
+import random
+
 class ConnectedComponents:
     def __init__(self, groups):
         self.groups = groups
@@ -6,10 +8,13 @@ class ConnectedComponents:
     def connected(self):
         for i in range (0, self.size):
             self.groups[i].makeset() #salva le liste/alberi creati
-        for i in range (0, self.size):
-            for j in range (i+1, self.size):
-                if self.groups[i].findset() != self.groups[j].findset():
-                    self.groups[i].getChainList().union(self.groups[j].getChainList())
+        for i in range(0, self.size):
+            j = random.randint(i, self.size)
+            if self.groups[i].findset() != self.groups[j].findset():
+                self.groups[i].findset().union(self.groups[j].findset())
+
+
+
 
 
 
