@@ -15,14 +15,33 @@ timeTree = []
 
 #Lista concatenata senza euristica
 for i in n:
-    ListGroupNoEuristicList = []
-    TreeGroupList = []
+    groups = []
     for j in range(i):
-        ListGroupNoEuristicList.append(ListGroup.ListGroup(j, False))
+        groups.append(ListGroup.ListGroup(j, False))
     start = time.time()
-    ConnectedComponents.ConnectedComponents(ListGroupNoEuristicList).connected()
+    ConnectedComponents.ConnectedComponents(groups).connected()
     end = time.time()
     timeChainNoEuristic.append(end-start)
+    groups.clear()
+    for j in range(i):
+        groups.append(ListGroup.ListGroup(j, True))
+    start = time.time()
+    ConnectedComponents.ConnectedComponents(groups).connected()
+    end = time.time()
+    timeChainEuristic.append(end-start)
+    groups.clear()
+    for j in range(i):
+        groups.append(TreeGroup(j))
+    start = time.time()
+    ConnectedComponents.ConnectedComponents(groups).connected()
+    end = time.time()
+    timeTree.append(end-start)
+    groups.clear()
+
+
+
+
+
 
 
 
