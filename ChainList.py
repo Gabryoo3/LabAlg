@@ -1,32 +1,32 @@
 import ListGroup
 
 class ChainList:
-    def __init__(self, ListGroup,euristic):
-        self.head = ListGroup
-        self.tail = ListGroup
+    def __init__(self, li:ListGroup,euristic):
+        self.head = li
+        self.tail = li
         self.size = 1
         self.euristic = euristic
-    def union(self, ChainList):
-        if (self.size < ChainList.getSize()) and (self.euristic == True): #caso con euristica
+    def union(self, chainList):
+        if (self.size < chainList.getSize()) and (self.euristic == True): #caso con euristica
             print("Euristica")
-            ChainList.setSize(ChainList.getSize() + self.size)
+            chainList.setSize(chainList.getSize() + self.size)
             i = self.head
             while i is not None:
-                i.setChainList(ChainList)
+                i.setChainList(chainList)
                 i = i.next
-            self.head = ChainList.getTail().next
-            ChainList.setTail(self.tail)
-            return ChainList
+            self.head = chainList.getTail().next
+            chainList.setTail(self.tail)
+            return chainList
         #caso senza euristica
         else:
             print("No Euristica")
-            self.size += ChainList.getSize()
-            i = ChainList.getHead()
+            self.size += chainList.getSize()
+            i = chainList.getHead()
             while i is not None:
                 i.setChainList(self)
                 i = i.next
-            self.tail.next = ChainList.getHead()
-            self.tail = ChainList.getTail()
+            self.tail.next = chainList.getHead()
+            self.tail = chainList.getTail()
             return self
 
     def getHead(self):
@@ -35,12 +35,12 @@ class ChainList:
         return self.tail
     def getSize(self):
         return self.size
-    def setHead(self, ChainList):
-        self.head = ChainList.getHead()
-    def setTail(self, ChainList):
-        self.tail = ChainList.getTail()
-    def setSize(self, ChainList):
-        self.size = ChainList.getSize()
+    def setHead(self, chainList):
+        self.head = chainList.getHead()
+    def setTail(self, chainList):
+        self.tail = chainList.getTail()
+    def setSize(self, chainList):
+        self.size = chainList.getSize()
     def print(self):
         i = self.head
         while i is not None:

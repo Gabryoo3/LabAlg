@@ -5,7 +5,7 @@ class ListGroup:
     def __init__(self, element, euristic):
         self.element = element
         self.next = None
-        self.chainList: ChainList = None
+        self.chainList = None
         self.euristic = euristic
 
     def makeset(self) -> ChainList:
