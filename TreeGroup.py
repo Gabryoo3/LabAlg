@@ -7,12 +7,19 @@ class TreeGroup:
         self.TreeList = None
 
 
-    def makeset(self, treeGroup) -> TreeList:
-        self.TreeList = TreeList(treeGroup)
-        return self.TreeList
+    def makeset(self) -> TreeList:
+        self.TreeList = TreeList(self)
+       # print("TreeList: ", self.TreeList)
+        return self.TreeList #più che ritornare il rappresentante, ritorna l'intera struttura dati
     def findset(self):
-        return self.TreeList.root
+        return self.TreeList
     def getElement(self):
         return self.element
     def getGroup(self):
         return self
+    def setTree(self, tree):
+        self.TreeList = tree
+    def getFather(self):
+        return self.father
+    def setFather(self, father):
+        self.father = father
