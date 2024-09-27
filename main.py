@@ -4,16 +4,16 @@ import ChainList
 import time
 import random
 import math
-import plot
+import Plot
 from TreeGroup import TreeGroup
 
-timeChainNoEuristic = []
-timeChainEuristic =[]
+timeChainNoHeuristics = []
+timeChainHeuristics = []
 timeTree = []
 n = []
 
 #Lista concatenata senza euristica
-for i in range(3,15) :
+for i in range(3,17) :
     numElement = (int)(math.pow(2, i))
     n.append(numElement)
     groups = []
@@ -22,7 +22,7 @@ for i in range(3,15) :
     startLinkNE = time.time()
     ConnectedComponents.ConnectedComponents(groups).connected()
     endLinkNE = time.time()
-    timeChainNoEuristic.append(round(endLinkNE-startLinkNE, 4))
+    timeChainNoHeuristics.append(round(endLinkNE-startLinkNE, 4))
     #print("LinkListNoEuristic: ", endLinkNE-startLinkNE)
     groups.clear()
     for j in range(numElement):
@@ -31,7 +31,7 @@ for i in range(3,15) :
     ConnectedComponents.ConnectedComponents(groups).connected()
     endLinkE = time.time()
 
-    timeChainEuristic.append(round(endLinkE-startLinkE,4))
+    timeChainHeuristics.append(round(endLinkE-startLinkE,4))
     #print("LinkListNoEuristic: ", endLinkE-startLinkE)
     groups.clear()
     for j in range(numElement):
@@ -43,13 +43,13 @@ for i in range(3,15) :
     #print("Tree: ", endTree-startTree)
     groups.clear()
 
-print("TimeChainWithNoEuristic: ",timeChainNoEuristic)
-print("TimeChainWithEuristic: ",timeChainEuristic)
+print("TimeChainWithNoHeuristics: ",timeChainNoHeuristics)
+print("TimeChainWithHeuristics: ",timeChainHeuristics)
 print("TimeTree: ",timeTree)
 
-plt = plot.plot(timeChainNoEuristic, timeChainEuristic, timeTree, n)
-plt.plotChainNoEuristic()
-plt.plotChainEuristic()
+plt = Plot.Plot(timeChainNoHeuristics, timeChainHeuristics, timeTree, n)
+plt.plotChainNoHeuristics()
+plt.plotChainHeuristics()
 plt.plotTree()
 plt.plotAll()
 

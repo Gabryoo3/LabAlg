@@ -2,14 +2,14 @@ from ChainList import ChainList
 
 
 class ListGroup:
-    def __init__(self, element, euristic):
+    def __init__(self, element, heuristics):
         self.element = element
         self.next = None
         self.chainList = None
-        self.euristic = euristic
+        self.heuristics = heuristics
 
     def makeset(self) -> ChainList:
-        self.chainList = ChainList(self, self.euristic)
+        self.chainList = ChainList(self, self.heuristics)
         #print("ChainList: ", self.chainList)
         return self.chainList
 

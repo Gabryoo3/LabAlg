@@ -17,7 +17,6 @@ class ChainList:
                 i.setChainList(chain_list)
                 i = i.next
             chain_list.getTail().next = self.head
-
             self.head = chain_list.getHead()
             chain_list.setTail(self.tail)
             return chain_list
@@ -30,7 +29,6 @@ class ChainList:
                 i.setChainList(self)
                 i = i.next
             self.tail.next = chain_list.getHead()
-
             chain_list.setHead(self.head)
             self.tail = chain_list.getTail()
             return self

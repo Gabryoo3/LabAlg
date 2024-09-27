@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-class plot:
+class Plot:
     def __init__(self, timeChainNoEuristic, timeChainEuristic, timeTree, n):
         self.timeChainNoEuristic = timeChainNoEuristic
         self.timeChainEuristic = timeChainEuristic
@@ -17,22 +17,22 @@ class plot:
         plt.legend()
         plt.show()
         plt.savefig('allPlots.png')
-    def plotChainNoEuristic(self):
+    def plotChainNoHeuristics(self):
         plt.plot(self.n, self.timeChainNoEuristic, label='Catena senza euristica')
         plt.xlabel('Numero di elementi')
         plt.ylabel('Tempo esecuzione')
         plt.title("Tempo di esecuzione per la lista concatenata senza euristica")
         plt.legend()
         plt.show()
-        plt.savefig('ChainNoEuristic.jpg')
-    def plotChainEuristic(self):
+        plt.savefig('ChainNoHeuristics.jpg')
+    def plotChainHeuristics(self):
         plt.plot(self.n, self.timeChainEuristic, label='Catena con euristica')
         plt.xlabel('Numero di elementi')
         plt.ylabel('Tempo esecuzione')
         plt.title("Tempo di esecuzione per la lista concatenata con euristica")
         plt.legend()
         plt.show()
-        plt.savefig('ChainEuristic.jpg')
+        plt.savefig('ChainHeuristics.jpg')
     def plotTree(self):
         plt.plot(self.n, self.timeTree, label='Albero con compressione')
         plt.xlabel('Numero di elementi')

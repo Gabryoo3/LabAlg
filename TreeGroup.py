@@ -15,8 +15,6 @@ class TreeGroup:
         return self.TreeList
     def getElement(self):
         return self.element
-    def getGroup(self):
-        return self
     def setTree(self, tree):
         self.TreeList = tree
     def getFather(self):
