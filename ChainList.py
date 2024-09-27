@@ -33,7 +33,6 @@ class ChainList:
 
             chain_list.setHead(self.head)
             self.tail = chain_list.getTail()
-
             return self
 
     def getHead(self):

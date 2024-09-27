@@ -24,7 +24,7 @@ class plot:
         plt.title("Tempo di esecuzione per la lista concatenata senza euristica")
         plt.legend()
         plt.show()
-        plt.savefig('ChainNoEuristic.png')
+        plt.savefig('ChainNoEuristic.jpg')
     def plotChainEuristic(self):
         plt.plot(self.n, self.timeChainEuristic, label='Catena con euristica')
         plt.xlabel('Numero di elementi')
@@ -32,7 +32,7 @@ class plot:
         plt.title("Tempo di esecuzione per la lista concatenata con euristica")
         plt.legend()
         plt.show()
-        plt.savefig('ChainEuristic.png')
+        plt.savefig('ChainEuristic.jpg')
     def plotTree(self):
         plt.plot(self.n, self.timeTree, label='Albero con compressione')
         plt.xlabel('Numero di elementi')
@@ -40,4 +40,4 @@ class plot:
         plt.title("Tempo di esecuzione per la lista albero")
         plt.legend()
         plt.show()
-        plt.savefig('Tree.png')
+        plt.savefig('Tree.jpg')

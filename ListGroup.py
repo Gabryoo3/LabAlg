@@ -19,8 +19,6 @@ class ListGroup:
     def getElement(self):
         return self.element
 
-    def getChainList(self):
-        return self.chainList
     def setChainList(self, chainList):
         self.chainList = chainList
 
