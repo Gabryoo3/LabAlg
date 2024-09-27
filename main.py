@@ -1,8 +1,6 @@
 import ConnectedComponents
 import ListGroup
-import ChainList
 import time
-import random
 import math
 import Plot
 from TreeGroup import TreeGroup
