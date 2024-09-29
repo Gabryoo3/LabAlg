@@ -1,23 +1,22 @@
 from ChainList import ChainList
 
 
-class ListGroup:
-    def __init__(self, element, heuristics):
-        self.element = element
+class ListElement:
+    def __init__(self, value, heuristics):
+        self.value = value
         self.next = None
         self.chainList = None
         self.heuristics = heuristics
 
-    def makeset(self) -> ChainList:
+    def makeset(self):
         self.chainList = ChainList(self, self.heuristics)
         #print("ChainList: ", self.chainList)
-        return self.chainList
 
     def findset(self):
         return self.chainList
 
-    def getElement(self):
-        return self.element
+    def getValue(self):
+        return self.value
 
     def setChainList(self, chainList):
         self.chainList = chainList

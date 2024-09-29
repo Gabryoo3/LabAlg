@@ -9,7 +9,7 @@ class ConnectedComponents:
         for i in range (0, self.size):
             self.groups[i].makeset() #salva le liste/alberi creati
         for i in range(0, self.size):
-            j = random.randint(i, self.size-1)
+            j = random.randint(0, self.size-1)
             if self.groups[i].findset() != self.groups[j].findset():
                 self.groups[i].findset().union(self.groups[j].findset())
 
