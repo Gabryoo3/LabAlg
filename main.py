@@ -13,7 +13,7 @@ n = []
 
 
 #Lista concatenata senza euristica
-for i in range(1,11):
+for i in range(1,15):
     numElement = (int)(math.pow(2, i))
     n.append(numElement)
     elements = []
