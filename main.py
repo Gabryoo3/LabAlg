@@ -11,9 +11,8 @@ timeChainHeuristics = []
 timeTree = []
 n = []
 
-
 #Lista concatenata senza euristica
-for i in range(1,15):
+for i in range(1,11):
     numElement = (int)(math.pow(2, i))
     n.append(numElement)
     elements = []
